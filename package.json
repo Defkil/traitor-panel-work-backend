@@ -1,0 +1,19 @@
+{
+  "name": "traitor-panel-work-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Defkil/traitor-panel-work-backend.git"
+  },
+  "author": "Oliver Grüttner",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Defkil/traitor-panel-work-backend/issues"
+  },
+  "homepage": "https://github.com/Defkil/traitor-panel-work-backend#readme"
+}
