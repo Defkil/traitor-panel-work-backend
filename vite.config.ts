@@ -11,7 +11,18 @@ export default defineConfig({
             appPath: './src/main.ts',
             exportName: 'traitorPanelWorkBackend',
             tsCompiler: 'esbuild',
-            swcOptions: {}
+            swcOptions: {
+                jsc: {
+                    parser: {
+                        syntax: "typescript",
+                        decorators: true
+                    },
+                    transform: {
+                        legacyDecorator: true,
+                        decoratorMetadata: true
+                    }
+                }
+            }
         })
     ],
     optimizeDeps: {
@@ -19,4 +30,8 @@ export default defineConfig({
             '@fastify/swagger',
         ],
     },
+    define: {
+
+        "process.env.__VITE_RUNTIME__": true,
+    }
 });
