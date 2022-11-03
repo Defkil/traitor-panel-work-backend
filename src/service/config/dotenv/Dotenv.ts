@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import {ConfigInterface} from "../config.interface";
 import * as dotenv from 'dotenv'
 import {injectable} from "inversify";

@@ -31,7 +31,6 @@ export default defineConfig({
         ],
     },
     define: {
-
         "process.env.__VITE_RUNTIME__": true,
     }
 });
