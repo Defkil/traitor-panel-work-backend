@@ -1,7 +1,7 @@
-import {container} from "./inversify.config";
-import {TYPES} from "./inversify.types";
-import {AppInterface} from "./App";
-import {ServerInterface} from "./service/server/server.interface";
+import { container } from './inversify.config'
+import { TYPES } from './inversify.types'
+import { AppInterface } from './App'
+import { ServerInterface } from './service/server/server.interface'
 /*
 const app = fastify();
 
@@ -19,4 +19,6 @@ const app = container.get<AppInterface>(TYPES.App)
 app.setup()
 app.start()
 
-export const traitorPanelWorkBackend = container.get<ServerInterface>(TYPES.Service.Server).fastify;
+export const traitorPanelWorkBackend = container.get<ServerInterface>(
+  TYPES.Service.Server
+).fastify

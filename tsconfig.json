@@ -15,10 +15,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es6",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "module": "commonjs",
     "inlineSources": true,
     "sourceMap": true

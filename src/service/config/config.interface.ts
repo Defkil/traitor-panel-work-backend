@@ -1,3 +1,3 @@
 export interface ConfigInterface {
-    query(msg: string): string
+  query(msg: string): string
 }
