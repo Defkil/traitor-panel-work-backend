@@ -1,28 +1,20 @@
 import { injectable, inject } from 'inversify'
-import { ServerInterface } from '../server.interface'
 import { fastify } from 'fastify'
-import { TYPES } from '../../../inversify.types'
-import { LoggerInterface } from '../../logger/logger.interface'
 import { Logger } from 'pino'
 import { FastifyInstance } from 'fastify/types/instance'
-import { ConfigInterface } from '../../config/config.interface'
+import {TYPES} from "../../inversify.types";
+import {FastifyInterface} from "./fastify.interface";
+import {LoggerInterface} from "../../service/logger/logger.interface";
 
 /**
  * Fastify with logging and secure sessions
  */
 @injectable()
-export class Fastify implements ServerInterface {
+export class Fastify implements FastifyInterface {
   private server: FastifyInstance
   private logger: LoggerInterface
   fastify: FastifyInstance
-
-  /**
-   * setups logger
-   * @param config config data
-   * @param logger logger
-   */
   constructor(
-    @inject(TYPES.Service.Config) private config: ConfigInterface,
     @inject(TYPES.Service.Logger) logger: LoggerInterface
   ) {
     this.fastify = this.server = fastify({
@@ -34,23 +26,12 @@ export class Fastify implements ServerInterface {
   }
 
   setup() {
-    console.log(this.config)
-
-    this.server.get('/', async (_request, reply) => {
-      console.log('a')
-      console.log('b')
-      console.log('c')
-
-      reply.send({ hello: 'world' })
-    })
-
-    this.setupSessions()
+    this.logger.info('setting up fastify')
   }
 
   /** starts fastify server */
   start() {
     this.logger.info('starting server')
-
     if (!process.env.__VITE_RUNTIME__) {
       this.server
         .listen({
@@ -58,13 +39,8 @@ export class Fastify implements ServerInterface {
         })
         .then((_e) => {
           this.logger.info('server started')
+          this.logger.error(_e)
         })
     }
   }
-
-  /**
-   * setup secure session plugin
-   * @private
-   */
-  private setupSessions() {}
 }

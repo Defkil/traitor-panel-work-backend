@@ -3,9 +3,9 @@ import { TYPES } from './inversify.types'
 import { App, AppInterface } from './App'
 import { Dotenv } from './service/config/dotenv/Dotenv'
 import { Pino } from './service/logger/pino/Pino'
-import { Fastify } from './service/server/fastify/Fastify'
 import { UiInterface } from "./shared/interfaces/ui.interface";
 import { LoginAuthUi } from "./core/auth/ui/login.auth.ui";
+import {Fastify} from "./shared/fastify/Fastify";
 
 const container = new Container()
 

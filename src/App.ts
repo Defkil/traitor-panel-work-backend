@@ -2,8 +2,8 @@ import {inject, injectable, multiInject} from 'inversify'
 import 'reflect-metadata'
 import { TYPES } from './inversify.types'
 import { LoggerInterface } from './service/logger/logger.interface'
-import { ServerInterface } from './service/server/server.interface'
 import {UiInterface} from "./shared/interfaces/ui.interface";
+import {FastifyInterface} from "./shared/fastify/fastify.interface";
 
 export interface AppInterface {
   /**
@@ -29,7 +29,7 @@ export class App implements AppInterface {
       /**
        * web server
        */
-    @inject(TYPES.Service.Server) private server: ServerInterface,
+    @inject(TYPES.Service.Server) private server: FastifyInterface,
       /**
        * all registered uis
        */

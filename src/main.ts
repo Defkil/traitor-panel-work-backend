@@ -1,7 +1,7 @@
 import { container } from './inversify.config'
 import { TYPES } from './inversify.types'
 import { AppInterface } from './App'
-import { ServerInterface } from './service/server/server.interface'
+import {FastifyInterface} from "./shared/fastify/fastify.interface";
 
 /**
  * Main entry point for the application
@@ -21,6 +21,6 @@ start().catch((err) => {
 /**
  * Vite's server export
  */
-export const traitorPanel = container.get<ServerInterface>(
+export const traitorPanel = container.get<FastifyInterface>(
   TYPES.Service.Server
 ).fastify
