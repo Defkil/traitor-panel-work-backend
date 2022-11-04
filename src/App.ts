@@ -27,11 +27,11 @@ export class App implements AppInterface {
        */
     @inject(TYPES.Service.Logger) private logger: LoggerInterface,
       /**
-       * web server service
+       * web server
        */
     @inject(TYPES.Service.Server) private server: ServerInterface,
       /**
-       * all registered ui services
+       * all registered uis
        */
     @multiInject(TYPES.Ui) private uis: UiInterface[]
   ) {}
@@ -46,7 +46,7 @@ export class App implements AppInterface {
   }
 
   /**
-   * mount all ui services to fastify
+   * mount all uis to fastify
    * @private
    */
   private mountUi(): void {
