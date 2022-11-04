@@ -5,7 +5,11 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['eslint:recommended'],
+  extends: [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/eslint-recommended',
+      'plugin:@typescript-eslint/recommended'
+  ],
   overrides: [
     {
       files: ['*.ts'],
@@ -17,6 +21,7 @@ module.exports = {
     },
   ],
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn']
   },
 }
