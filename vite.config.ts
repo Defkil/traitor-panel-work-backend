@@ -9,7 +9,7 @@ export default defineConfig({
     ...VitePluginNode({
       adapter: 'fastify',
       appPath: './src/main.ts',
-      exportName: 'traitorPanelWorkBackend',
+      exportName: 'traitorPanel',
       tsCompiler: 'esbuild',
       swcOptions: {
         jsc: {
